@@ -1,0 +1,130 @@
+import java.util.*;
+
+
+class UtilityList {
+	private List<Student> l;
+	
+	
+	public List<Student> getL() {
+		return l;
+	}
+
+
+	public void setL(List<Student> l) {
+		this.l = l;
+	}
+
+
+	public void createList() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Student Roll Number - ");
+		int rollno = sc.nextInt();
+		
+		System.out.println("Enter Student Name - ");
+		String name = sc.next();
+		
+		System.out.println("Enter Student Percentage - ");
+		double percent = sc.nextDouble();
+		
+		System.out.println("Enter Student SkillSet - ");
+		Set<String> skillset = new HashSet<>();
+		for(int i=0; i<skillset.size(); i++) {
+			String sk = sc.next();
+			skillset.add(sk);
+		}
+		System.out.println(skillset);
+		
+		Student s = new Student(rollno, name, percent, skillset);
+		
+		l.add(s);
+	}
+	
+
+	public void printList() {
+		for(Student s: l) {
+			System.out.println("Roll No. - "+s.getRollno());
+			System.out.println("Name. - "+s.getName());
+			System.out.println("Percentage. - "+s.getPercent());
+			System.out.println("Skill Set. - "+s.getSkillset());
+			System.out.println();
+		}
+	}
+}
+
+class Student {
+	private int rollno;
+	private String name;
+	private double percent;
+	private Set<String> skillset;
+	
+	public Student() {
+		rollno=101;
+		name="Joel";
+		percent=73;
+		skillset=new HashSet<>();
+	}
+
+	public Student(int rollno, String name, double percent, Set<String> skillset) {
+		this.rollno = rollno;
+		this.name = name;
+		this.percent = percent;
+		this.skillset = skillset;
+	}
+
+	public int getRollno() {
+		return rollno;
+	}
+
+	public void setRollno(int rollno) {
+		this.rollno = rollno;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getPercent() {
+		return percent;
+	}
+
+	public void setPercent(double percent) {
+		this.percent = percent;
+	}
+
+	public Set<String> getSkillset() {
+		return skillset;
+	}
+
+	public void setSkillset(Set<String> skillset) {
+		this.skillset = skillset;
+	}
+	
+}
+
+
+public class Tester {
+
+	public static void main(String[] args) {
+		UtilityList u = new UtilityList();
+		u.createList();
+		u.printList();
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

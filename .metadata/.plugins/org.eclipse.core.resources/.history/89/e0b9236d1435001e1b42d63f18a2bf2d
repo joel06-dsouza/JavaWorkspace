@@ -1,0 +1,33 @@
+import java.util.HashSet;
+import java.util.Set;
+
+class Laptop{
+	int lid;
+	String make;
+	double cost;
+	
+	public Laptop(int lid, String make, double cost) {
+		super();
+		this.lid = lid;
+		this.make = make;
+		this.cost = cost;
+	}
+	
+	public void show() {
+		System.out.println(lid+ " " +make+" " +cost);
+	}
+	
+}
+public class Tester {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Set<Laptop> s = new HashSet<>();
+		s.add(new Laptop(101,"LG",20000));
+		s.add(new Laptop(102,"PG",40000));
+		s.add(new Laptop(131,"HG",60000));
+		
+
+	}
+
+}
